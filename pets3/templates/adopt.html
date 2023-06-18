@@ -1,0 +1,145 @@
+{% extends 'basic.html' %}
+
+{% load static %}
+
+{% block title %}Adoption{% endblock title %}
+
+{% block stylesheet %}{% static 'adopt.css' %}{% endblock stylesheet %}
+
+{% block body %}
+
+<!-- Cards -->
+<div class="bg-light w-100">
+  <div class="adoption py-4">
+    <ul class="row container mx-auto  my-1.5 rounded " id="starter">
+      <li class="col-12 l_item  text-center">
+        <img src="./static/pets_icon.png" id="pet_icon">
+      </li>
+      <li class="col-12 l_item">
+        <h2 class="h2 text-center py-1">Want to adopt a pet?</h2>
+      </li>
+      <li class="col-6 h2 text-lg-right text-md-right m-auto l_item text-center">Find it here:</li>
+      <li class="m-auto l_item">
+        <form class="form-inline my-2 my-lg-0 m-auto text-center submit_form">
+          <input
+            class="form-control  mr-sm-2 w-25 m-auto"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-success sb-btn "
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+      </li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    {% for cat,range1,range2,pet in allpets %}
+
+    <center>
+      <h2 class="pb-2 border-bottom ">{{cat}}</h2>
+    </center>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        {% comment %} {%for j in range1%} {% endcomment %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          {%for k in pet%}
+          {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {%endif%}
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm" >
+              <img src="/{{k.image}}" class="card-image">
+
+              <div class="container card-body d-flex justify-content-between align-items-center ">
+
+                <div>
+                  <h2>{{k.pet_name}}</h2>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Breed: {{k.breed}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Gender: {{k.gender}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Age: {{k.age}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Owner: {{k.owner}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">City: {{k.owner.city}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Country: {{k.owner.country}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Color: {{k.color}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Eating Habbits: {{k.eating_habits}}</span></p>
+                  <p><span style="font-size: 20px; padding-top: 3px;">Alergies: {{k.alergies}}</span></p>
+
+                </div>
+                
+                <button type="submit" class="btn btn-secondary col-3 my-auto">Contact Owner</button>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+    {% comment %} {% endfor %} {% endcomment %}
+    {% endfor %}
+
+    {% comment %} <div class="container pt-4">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="card p-2 neumorphism" style="border-radius:0.5rem ; border-color: transparent;">
+          <h4 class="text-center">Pets Listed for Adoption</h4>
+          <hr class="mt-0 mb-4">
+          <div class="container ">
+
+            {% for range1,range2,pet in allpets %} {% endcomment %}
+
+
+            {% comment %} {%for j in range1%} {% endcomment %}
+            {% comment %} <div class="row container">
+
+              {%for k in pet%}
+              {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+              <div class="col " style="width: 500px ;">
+                <div class="card floatcard" style="border-color: transparent;">
+                  <img src="/{{k.image}}" class="card-img-top" alt="..." style="height: 500px; width: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{k}}</h5>
+                    <p class="card-text"><b>Owner: </b>{{k.owner}}</p>
+                    <p class="card-text"><b>Breed: </b>{{k.breed}}</p>
+                    <p class="card-text"><b>Color: </b>{{k.color}}</p>
+                    <p class="card-text"><b>Eating_habits: </b>{{k.eating_habits}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row container">
+              {%else%}
+              <div class="col " style="width: 500px ;">
+                <div class="card floatcard" style="border-color: transparent;">
+                  <img src="/{{k.image}}" class="card-img-top" alt="..." style="height: 500px; width: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{k}}</h5>
+                    <p class="card-text"><b>Owner: </b>{{k.owner}}</p>
+                    <p class="card-text"><b>Breed: </b>{{k.breed}}</p>
+                    <p class="card-text"><b>Color: </b>{{k.color}}</p>
+                    <p class="card-text"><b>Eating_habits: </b>{{k.eating_habits}}</p>
+                  </div>
+                </div>
+              </div>
+              {%endif%}
+              {%endfor%}
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+
+  </div>
+</div>
+
+
+{% endblock body %}

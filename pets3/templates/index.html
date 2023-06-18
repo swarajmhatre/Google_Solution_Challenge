@@ -1,0 +1,180 @@
+{% extends 'basic.html' %}
+
+{% load static %}
+
+{% block title %}Index{% endblock title %}
+
+{% block stylesheet %}{% static 'landing.css' %}{% endblock stylesheet %}
+
+{% block body %}
+
+    
+    
+
+<main class="main" >
+  <!--==================== HOME ====================-->
+  <section class="home" id="home">
+      <div class="home__container container grid">
+          <img src="/static/waw.jpeg" alt="" class="home__img">
+
+          <div class="home__data">
+              <h1 class="home__title">
+                  Wags & Whiskers
+              </h1>
+              <p class="home__description">
+                  Your one-stop destination to find, identify and adopt your beloved pets!!
+              </p>
+              <a href="#about" class="button button--flex">
+                  Explore <i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+          </div>
+
+          <div class="home__social">
+              <span class="home__social-follow">Follow Us</span>
+
+              <div class="home__social-links">
+             <img src="https://th.bing.com/th?id=OIP.dooR72y5JrnNLeklK5ft3AHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"movie-1" height="50" width="50"/><br>
+                  <img src="data:image/png;base64,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"movie-1" height="50" width="50"/><br>
+                  <img src="data:image/png;base64,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"movie-1" height="50" width="50"/><br>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!--==================== ABOUT ====================-->
+  <section class="about section container" id="about">
+      <div class="about__container grid">
+          <img src="/static/abc.png" alt="" class="about__img">
+
+          <div class="about__data">
+              <h2 class="section__title about__title">
+                  What is Wags & Whiskers all about?
+              </h2>
+
+              <p class="about__description">
+                  We, at Wags & Whiskers are working towars 2 primary goals:<br>
+              </p>
+
+              <div class="about__details">
+                  <p class="about__details-description">
+                      <i class="ri-checkbox-fill about__details-icon"></i>
+                  ~ The Home-to-Home adoption of pets so they can get a loving family<br>
+                  </p>
+                  <p class="about__details-description">
+                      <i class="ri-checkbox-fill about__details-icon"></i>
+                  ~ Reporting a lost or found pet so it can reunite with its family<br>
+                  </p>
+                  <p class="about__details-description">
+                      <i class="ri-checkbox-fill about__details-icon"></i>
+                      Easy listing and Reporting of pets via our website
+                  </p>
+                  <p class="about__details-description">
+                      <i class="ri-checkbox-fill about__details-icon"></i>
+                      Our ML model allows you to upload a picture of the pet you have found and instantly informs you about the animal's breed specifications
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!--==================== STEPS ====================-->
+  <section class="steps section container">
+      <div class="steps__bg">
+          <h2 class="section__title-center steps__title">
+              Steps to list a <br> pet for adoption
+          </h2>
+
+          <div class="steps__container grid">
+              <div class="steps__card">
+                  <div class="steps__card-number">01</div>
+                  <p class="steps__card-description">
+Create an Account on our website and Login and navigate to the profile page                          </p>
+              </div>
+
+              <div class="steps__card">
+                  <div class="steps__card-number">02</div>
+
+                  <p class="steps__card-description">
+Select the respective form to either adopt or report a lost or missing pet                           </p>
+              </div>
+
+              <div class="steps__card">
+                  <div class="steps__card-number">03</div>
+
+                  <p class="steps__card-description">Fill in all tht required details and submit the form.</p>
+              </div>
+          </div>
+
+      </div>
+      <br>
+                            <center>  <a href="#about" class="button button--flex">
+                  Report a missing pet<i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+                                  <a href="#about" class="button button--flex">
+                  Adopt Now<i class="ri-arrow-right-down-line button__icon"></i>
+              </a>
+                                  <a href="#about" class="button button--flex">
+                  List a found pet <i class="ri-arrow-right-down-line button__icon"></i>
+              </a></center>
+  </section>
+  <!--==================== QUESTIONS ====================-->
+  <section class="questions section" id="faqs">
+      <h2 class="section__title-center questions__title container">
+          Some common questions <br> were often asked
+      </h2>
+
+      <div class="container accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              How do I figure out the breed of a pet I have found?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse ">
+            <div class="accordion-body">
+              <strong>Navigate to the profile page, scroll down till you find the lost/found button. Click the bottmmost button and you'll be taken to the breed information page where you can upload the image of the pet you found. The breed and the information regarding the pet will be displayed below.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              How will the pet owner contact me?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Why Wags & Whiskers?
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+
+
+<!--=============== SCROLL UP ===============-->
+<a href="#" class="scrollup" id="scroll-up">
+  <i class="ri-arrow-up-fill scrollup__icon"></i>
+</a>
+
+<!--=============== SCROLL REVEAL ===============-->
+<script src="assets/js/scrollreveal.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+
+{% endblock body %}

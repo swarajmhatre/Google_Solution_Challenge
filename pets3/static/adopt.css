@@ -1,0 +1,34 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+/* Search Dahboard */
+#starter {
+  background-color: #b3ccff;
+  color: #095a55;
+  padding: 2vh;
+}
+.l_item {
+  padding: 1rem 0;
+}
+.submit_form {
+  padding: 1rem 0;
+}
+.sb-btn {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+#pet_icon {
+  height: 20vh;
+}
+
+.card-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+}

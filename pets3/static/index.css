@@ -1,0 +1,71 @@
+body,html{
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #title {
+    width: 100%;
+    height: 89.7vh;
+  }
+  .title-image {
+    width: 50%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #title {
+    width: 100%;
+    height: 95vh;
+  }
+  .title-image {
+    width: 60%;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  #title {
+    width: 100%;
+    height: 95vh;
+  }
+  .title-image {
+    width: 70%;
+  }
+}
+#carousel {
+  width: 100%;
+}
+.cr-bg-img-1 {
+  background-image: url("car1.jpg");
+}
+
+.cr-bg-img-2 {
+  background-image: url("car2.jpg");
+}
+
+.cr-bg-img-3 {
+  background-image: url("car3.jpg");
+  
+}
+
+.carousel-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* small-desc */
+#small-desc{
+  height: 102vh;
+}
+
+
+/* Footer Section */
+
+.social-icon {
+  margin: 20px 10px;
+}
+#footer {
+  text-align: center;
+}
+
+

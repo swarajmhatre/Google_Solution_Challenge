@@ -1,0 +1,98 @@
+{% extends 'basic.html' %}
+
+{% load static %}
+
+{% block title %}Lost and Found{% endblock title %}
+
+{% block stylesheet %}{% static 'lost_find.css' %}{% endblock stylesheet %}
+
+{% block body %}
+<div class=" w-100 " >
+  <div class="adoption " >
+        <!-- Search dashboard -->
+        <ul class="row container mx-auto  my-3 rounded " id="starter">
+          <li class="col-12 l_item  text-center">
+            <img src="./static/pets_icon.png" id="pet_icon">
+          </li>
+          <li class="col-12 l_item">
+            <h2 class="h2 text-center py-1">Lost your pet?</h2>
+          </li>
+          <li class="col-6 h2 text-lg-right text-md-right m-auto l_item text-center">Find it here:</li>
+          <li class="m-auto l_item">
+            <form class="form-inline my-2 my-lg-0 m-auto text-center submit_form">
+              <input
+                class="form-control  mr-sm-2 w-25 m-auto"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-success sb-btn "
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </li>
+        </ul>
+
+        <div class="card-container-title w-100">
+          <div class="adoption py-4">
+        
+            {% for cat,range1,range2,pet in allpets %}
+        
+            <center>
+              <h2 class="pb-2 border-bottom ">{{cat}}</h2>
+            </center>
+        
+            <div class="album py-5 card-container">
+              <div class="container">
+        
+                {% comment %} {%for j in range1%} {% endcomment %}
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        
+                  {%for k in pet%}
+                  {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                  {%endif%}
+                  <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                      <img src="/{{k.image}}" class="card-image">
+        
+                      <div class="container card-body d-flex justify-content-between align-items-center ">
+                        <div>
+                          <h2>Breed: {{k.breed}}</h2>
+                          {% comment %} <p><span style="font-size: 25px; padding-top: 12px;">Breed: {{k.breed}}</span></p> {% endcomment %}
+                          <p><span style="font-size: 25px; padding-top: 12px;">Gender: {{k.gender}}</span></p>
+                          <p><span style="font-size: 25px; padding-top: 12px;">Owner / Temporay Owner: {{k.temp_owner}}</span></p>
+                          <p><span style="font-size: 25px; padding-top: 12px;">Color: {{k.color}}</span></p>
+                          <p><span style="font-size: 25px; padding-top: 12px;">Distinct Marks: {{k.distinctmarks}}</span></p>
+                          <p><span style="font-size: 25px; padding-top: 12px;">Lost / Found: {{k.lorf}}</span></p>
+                          <p><span style="font-size: 20px; padding-top: 3px;">City: {{k.temp_owner.city}}</span></p>
+                          <p><span style="font-size: 20px; padding-top: 3px;">Country: {{k.temp_owner.country}}</span></p>
+
+        
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary col-3 my-auto">Contact Info</button>
+                        
+        
+                      </div>
+                    </div>
+                  </div>
+                  {%endfor%}
+                </div>
+              </div>
+            </div>
+            {% comment %} {% endfor %} {% endcomment %}
+            {% endfor %}
+        
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+    {% endblock body %}
+
